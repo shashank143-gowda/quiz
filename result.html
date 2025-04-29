@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="result-page">
+
+    <div class="emoji-container">
+        <div class="emoji">🎉</div>
+        <div class="emoji">🌸</div>
+        <div class="emoji">✨</div>
+        <div class="emoji">🥳</div>
+    </div>
+
+    <div class="result-container">
+        <h1 class="result-title">Quiz Result</h1>
+        <p class="score-text">Your Score: {{ score }} out of {{ total }}</p>
+        <p class="feedback">
+            {% if score < total / 3 %}
+                Better luck next time! 💡
+            {% elif score < total * 2 / 3 %}
+                Good job! 👍
+            {% else %}
+                Awesome work! 🌟
+            {% endif %}
+        </p>
+        <a href="{{ url_for('index') }}" class="back-btn">Back to Quizzes</a>
+    </div>
+
+</body>
+</html>

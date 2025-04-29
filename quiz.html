@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Computer Science Quiz</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    </head>
+    
+<body>
+    <h1>Quiz</h1>
+    <form method="post">
+        {% for question, choices in questions_with_choices %}
+            <div class="question-block">
+                <p><strong>{{ question['question_text'] }}</strong></p>
+                {% for choice in choices %}
+                    <label>
+                        <input type="radio" name="question_{{ question['id'] }}" value="{{ choice['id'] }}" required>
+                        {{ choice['choice_text'] }}
+                    </label><br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Submit Answers</button>
+    </form>
+</body>
+</html>

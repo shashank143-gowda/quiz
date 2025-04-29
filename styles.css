@@ -1,0 +1,385 @@
+/* styles.css */
+
+/* Simple page styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Quiz Title Animation */
+h1 {
+    text-align: center;
+    color: #4A148C;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Question block */
+.question {
+    background: linear-gradient(135deg, #ffffff, #e3f2fd);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease;
+    transition: transform 0.3s;
+}
+
+.question:hover {
+    transform: scale(1.02);
+}
+
+/* Choice label animation */
+label {
+    display: block;
+    margin: 12px 0;
+    padding: 10px;
+    background-color: #f1f8e9;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    animation: fadeInLeft 0.8s ease;
+    transition: all 0.3s;
+}
+
+label:hover {
+    background-color: #c5e1a5;
+    border-color: #7cb342;
+    transform: translateX(5px);
+}
+
+/* Radio button hidden for custom styles */
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Submit Button Animation */
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #7b1fa2, #e040fb);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: fadeInUp 1s ease;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #6a1b9a, #d500f9);
+    transform: scale(1.05);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Landing Page Styles */
+.start-page {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeInDown 1s ease;
+    width: 90%;
+    max-width: 400px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #6a1b9a;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: bounce 1.5s infinite alternate;
+}
+
+.start-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #6a1b9a;
+    outline: none;
+    font-size: 18px;
+    transition: border-color 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    color: #999;
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* When user types */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -15px;
+    font-size: 14px;
+    color: #6a1b9a;
+}
+
+.start-btn {
+    padding: 12px;
+    background: linear-gradient(135deg, #8e24aa, #d81b60);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.start-btn:hover {
+    background: linear-gradient(135deg, #6a1b9a, #c2185b);
+    transform: scale(1.05);
+}
+
+/* Keyframe for title bounce */
+@keyframes bounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-20px); }
+}
+/* Add this to your styles.css */
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px; /* <-- Added padding */
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px; /* <-- Font size adjusted */
+    color: #333;
+}
+
+/* Fix the input placeholder */
+input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* Animate inputs */
+input[type="text"] {
+    animation: fadeInLeft 0.8s ease;
+}
+input[type="text"]:focus {
+    border: 2px solid #7b2cbf;
+    outline: none;
+    transition: 0.3s;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #6a1b9a;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%; /* Start in middle */
+    left: 10px;
+    color: #999;
+    font-size: 18px;
+    pointer-events: none;
+    transform: translateY(-50%); /* Center vertically */
+    transition: 0.3s ease all;
+    background: white; /* IMPORTANT: hide text overlapping */
+    padding: 0 5px; /* small padding around label */
+}
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -10px; /* move higher */
+    left: 5px;
+    font-size: 14px;
+    color: #6a1b9a;
+    background: white; /* maintain background */
+    padding: 0 5px;
+}
+/* style.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+    overflow-x: hidden;
+}
+.result-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #f8bbd0, #c5cae9);
+    overflow: hidden;
+}
+
+.result-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 1.2s ease;
+}
+
+.result-title {
+    font-size: 3rem;
+    color: #6a1b9a;
+    animation: glow 1.5s infinite alternate;
+}
+
+.score-text {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.feedback {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    animation: fadeInUp 1s ease-in-out;
+    color: #444;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(to right, #7b1fa2, #e040fb);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.3s;
+}
+
+.back-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #6a1b9a, #d500f9);
+}
+
+.emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.emoji {
+    position: absolute;
+    top: -50px;
+    font-size: 2rem;
+    animation: fall 5s linear infinite;
+    opacity: 0.8;
+}
+
+.emoji:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+.emoji:nth-child(2) {
+    left: 30%;
+    animation-delay: 1s;
+}
+.emoji:nth-child(3) {
+    left: 60%;
+    animation-delay: 2s;
+}
+.emoji:nth-child(4) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #6a1b9a; }
+    100% { text-shadow: 0 0 30px #d500f9; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
